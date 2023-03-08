@@ -42,7 +42,54 @@ The http://abcd1234.ngrok.io URL is the public URL that you can use to access yo
 Copy the http://abcd1234.ngrok.io URL and paste it into your web browser's address bar. You should see your local web server's content displayed in your browser.
 That's it! You can now share the ngrok URL with others to allow them to access your local web server from the internet.
 
-#### Note: Be sure to take appropriate precautions and use ngrok responsibly, as sharing your laptop's content with others over the internet may pose security risks.
+#### Note: Be sure to take appropriate precautions and use ngrok responsibly, as sharing your laptop's content with others over the internet may pose security risks. But if you're only exposing your index.html you should be fine
+
+
+#### Special Case
+
+In my case after inputing ```ngrok http 8000```, it brought forth this error
+```
+bash: ngrok: command not found
+```
+I added ngrok to my environment variables path using the graphic interface but still didn't work so I had to do it this way before it finally worked
+
+So
+If you're seeing the error message ```"bash: ngrok: command not found"```, it means that the ngrok executable is not in your system's PATH. Here's how you can add it to your PATH:
+
+First, make sure that you've downloaded and extracted the ngrok executable to a directory on your computer. For example, you might have extracted it to the ~/Downloads directory.
+
+Open your .bashrc file in a text editor by typing the following command in your terminal:
+
+```
+nano ~/.bashrc
+
+This will open the .bashrc file in the Nano text editor.
+```
+
+Add the following line to the end of the .bashrc file:
+ruby
+```
+export PATH=$PATH:/path/to/ngrok/directory
+```
+Replace /path/to/ngrok/directory with the path to the directory where you extracted the ngrok executable. For example, if you extracted it to the``` ~/Downloads``` directory, you would use the following line:
+
+```
+export PATH=$PATH:~/Downloads
+```
+Save the .bashrc file by pressing Ctrl+O and then Ctrl+X to exit Nano.
+
+Reload your .bashrc file by typing the following command in your terminal:
+
+```
+source ~/.bashrc
+```
+Try running the ngrok command again to make sure it's working using this
+```ngrok http 8000```
+This should start ngrok and expose your local web server to the internet.
+
+I hope this helps you resolve the issue with ngrok not being found in your PATH. Let me know if you have any other questions or concerns!
+
+
 
 Written by drimes after careful research on the internet and chatGPT
 
