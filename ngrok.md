@@ -89,7 +89,9 @@ This should start ngrok and expose your local web server to the internet.
 
 I hope this helps you resolve the issue with ngrok not being found in your PATH. Let me know if you have any other questions or concerns!
 
+One thing to note is that if you're using a different shell (e.g., zsh instead of bash), you may need to modify a different configuration file ```(e.g., ~/.zshrc instead of ~/.bashrc)```. So make sure to use the appropriate configuration file for your shell.
 
+Also, if you want to add the ngrok executable to your PATH permanently (so that you don't have to add it every time you open a new terminal window), you can add the export line to your ```~/.bash_profile (or ~/.zprofile for zsh)``` file instead.
 
 Written by drimes after careful research on the internet and chatGPT
 
